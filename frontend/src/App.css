@@ -1,0 +1,90 @@
+.dashboard-container {
+  background-color: #020617;
+  min-height: 100vh;
+  padding: 40px;
+  font-family: 'Inter', sans-serif;
+  color: #f8fafc;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto 40px;
+}
+
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #6366f1, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.export-btn {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.kpi-row {
+  display: flex;
+  gap: 20px;
+  max-width: 1300px;
+  margin: 0 auto 40px;
+}
+
+.kpi-card {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #1e293b;
+  flex: 1;
+  text-align: center;
+}
+
+.kpi-card span { color: #64748b; font-size: 0.7rem; text-transform: uppercase; }
+.kpi-card h2 { margin-top: 10px; font-size: 1.6rem; }
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.chart-card {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #1e293b;
+}
+
+h3 { color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase; }
+
+.table-container {
+  margin: 40px auto;
+  max-width: 1300px;
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #1e293b;
+}
+
+table { width: 100%; border-collapse: collapse; text-align: left; color: #94a3b8; }
+th, td { padding: 15px; border-bottom: 1px solid #1e293b; }
+
+/* PDF EXPORT FIX */
+@media print {
+  .export-btn { display: none; }
+  .dashboard-grid { display: block !important; }
+  .chart-card { margin-bottom: 30px; page-break-inside: avoid; width: 100% !important; }
+  .dashboard-container { background: white !important; color: black !important; padding: 0; }
+  .kpi-card, .table-container { background: white !important; border: 1px solid #ddd !important; }
+}
